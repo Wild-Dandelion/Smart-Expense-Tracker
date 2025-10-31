@@ -1,0 +1,111 @@
+/* --- Global Styles --- */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #2D3436;
+    -fx-accent: #0984E3;
+}
+
+.label {
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 14px;
+}
+
+.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* --- Input Controls --- */
+.text-field, .text-area, .combo-box {
+    -fx-background-color: #42494C;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #A0A0A0;
+    -fx-background-radius: 5;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+}
+
+.text-area .content {
+    -fx-background-color: #42494C;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #42494C;
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: -fx-accent;
+}
+
+/* --- Button Styles --- */
+.button {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+}
+
+.button:hover {
+    -fx-background-color: derive(-fx-accent, 20%);
+    -fx-cursor: hand;
+}
+
+/* --- Table View --- */
+.table-view {
+    -fx-background-color: #42494C;
+    -fx-background-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2D3436;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-row-cell {
+    -fx-background-color: #42494C;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #4a5255;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -fx-accent;
+}
+
+
+/* --- Bar Chart --- */
+.chart-title {
+    -fx-text-fill: white;
+}
+
+.chart-plot-background {
+    -fx-background-color: #42494C;
+}
+
+.axis {
+    -fx-tick-label-fill: #E0E0E0;
+}
+
+.axis-label {
+    -fx-text-fill: white;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: -fx-accent;
+}
