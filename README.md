@@ -1,96 +1,126 @@
-Smart Expense Tracker (JavaFX)
+# 💰 Smart Expense Tracking System
 
-A modern, desktop expense tracker application built with JavaFX. It provides a clean, dark-themed interface to log, view, and analyze your spending.
-<img width="1503" height="1020" alt="image" src="https://github.com/user-attachments/assets/f898ece9-05e1-4ef6-9e12-7742f44ceaaa" />
+💡 “Track your expenses today, master your finances tomorrow.”
 
 
-Features
+A modern **JavaFX-based Expense Tracker** designed to help users efficiently manage, visualize, and export their daily spending.  
+It offers a sleek, dark-themed interface with intuitive navigation, automatic data persistence, OCR-based input, and Excel export functionality.
 
-Modern UI: A beautiful, responsive styled completely with CSS.
+---
 
-Dashboard: At-a-glance dashboard with summary cards for "Total Spent" and "Monthly Average," plus a PieChart visualizing spending by category.
+## ✨ Preview
 
-Add Expenses: An intuitive form to add new expenses, featuring a DatePicker, ComboBox for categories, and text fields.
+| Dashboard | Add Expense | Expense Table | Settings |
+|------------|--![Uploading image.png…]()
+) | ![Add Expense](images/add-expense.png) | ![View Expenses](images/view-expenses.png) | ![Settings](images/settings.png) |
 
-Smart Suggestions: The category is automatically suggested based on keywords entered in the description (e.g., "uber" suggests "Travel").
+---
 
-View & Manage: A TableView lists all expenses, allowing you to select and delete entries.
 
-Simulations: Includes simulated "Scan Receipt (OCR)" and "Export Report" buttons to demonstrate potential advanced features.
+## 🧠 Overview
 
-Single-File Application: All logic, UI, styling, and the data model are contained within a single .java file.
+The **Smart Expense Tracker** is a desktop application built with **JavaFX** and **Maven**, allowing users to:
 
-Requirements
+- Log and categorize daily expenses  
+- Automatically load saved data on startup  
+- Visualize spending via a **Pie Chart**  
+- Auto-fill details from receipt images using **OCR (Tess4J)**  
+- Export all expenses to a **formatted Excel (.xlsx)** file  
 
-  Java JDK 11+: (Java Development Kit)
+---
+
+## 🚀 Features
+
+### 📊 Dashboard
+- Displays **Total Spent** and **Monthly Average** dynamically.  
+- Uses a **Pie Chart** to show expense distribution by category (Food, Travel, Bills, etc.).  
+- Automatically refreshes when new expenses are added or deleted.
+
+### 🧾 Add Expense Panel
+- Add expenses with **Date, Category, Amount, and Description**.  
+- **Smart Category Detection:** Automatically sets a category based on keywords:
+  - `"uber"` or `"ola"` → *Travel*
+  - `"lunch"` or `"zomato"` → *Food*
+  - `"electricity"` or `"rent"` → *Bills*
+- **OCR Integration:** Uses **Tess4J** to extract amounts from receipt images.
+
+### 📜 View Expenses
+- View all logged entries in a clean **table view**.  
+- Delete any expense — data updates immediately and is auto-saved.
+
+### ⚙️ Settings Panel
+- One-click **manual backup** to Excel (`expenses.xlsx`).  
+- Automatically loads previously saved expenses on startup.  
+- Data remains persistent between app runs.
+
+---
+
+## 🧰 Tools & Technologies
+
+| Category | Tools Used |
+|-----------|-------------|
+| **Language** | Java (JDK 17+ recommended) |
+| **Framework** | JavaFX |
+| **Build Tool** | Apache Maven |
+| **IDE** | IntelliJ IDEA / VS Code / Eclipse |
+| **Libraries Used** | `javafx-controls`, `javafx-fxml`, `tess4j`, `poi-ooxml` |
+| **Storage** | Local persistence (`expenses.csv`) + Excel export (`expenses.xlsx`) |
+
+---
+
+## 🗂️ Project Structure
+
+    ExpenseTrackerFX/
+    │
+    ├── pom.xml                        # Maven configuration file (dependencies, plugins)
+    ├── README.md                      # Project overview (you already have this)
+    ├── .gitignore                     # Ignored files list (I'll show below)
+    ├── styles.css                     # Your custom app stylesheet (optional)
+    │
+    ├── src/
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   └── com/
+    │   │   │       └── example/
+    │   │   │           └── expensetrackerfx/
+    │   │   │               ├── ExpenseTrackerFX.java      # Main Application class
+    │   │   │               ├── Launcher.java              # JavaFX launcher class (optional)
+    │   │   │               ├── FileStorage.java           # Handles CSV load/save
+    │   │   │               ├── ExcelExporter.java         # Handles Excel export
+
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the repository
+```bash
+    git clone https://github.com/Wild-Dandelion/ExpenseTrackerFX.git
+    cd ExpenseTrackerFX
+
+
+2️⃣ Open in IntelliJ IDEA (or VS Code / Eclipse)
+
+    Ensure JDK 17+ is selected.
+    
+    Open the pom.xml file — Maven will download dependencies automatically.
+
+3️⃣ Install Tesseract OCR
+    
+    Download from: https://github.com/tesseract-ocr/tesseract
+
+🏁 Future Enhancements
+    🔗 Integration with MySQL or SQLite
+    ☁️ Cloud sync for multi-device access
+    👥 User authentication
+
+Author
   
-  JavaFX SDK 11+: (Software Development Kit). This is no longer bundled with the standard JDK and must be downloaded separately.
+  Developed by: Wild-Dandelion 
+                tushary1212-cell
+                sreehithreddy0202
+                Sharanya-Dutta
+📜 License
 
-How to Run
-
-  There are two main ways to run this application: from an IDE (Recommended) or from the command line.
-  
-  Option 1: Running from an IDE (Recommended)
-
-Configure Project:
-
-  Create a new Java project in your IDE (e.g., IntelliJ IDEA, Eclipse, VS Code).
-  
-  Add the ExpenseTrackerFX.java file to your project's src directory (e.g., src/com/example/expensetrackerfx/ExpenseTrackerFX.java).
-
-Add JavaFX Library:
-
-  Download the JavaFX SDK from the Gluon website.
-
-  Add the JavaFX SDK as a global or project library. In IntelliJ, this is under File > Project Structure > Libraries. Point it to the lib folder of the SDK.
-
-Set VM Options:
-
-  You must tell the Java VM where to find the JavaFX modules.
-
-  Find the "Run Configuration" for your ExpenseTrackerFX class.
-  
-  Add the following to the "VM options" field. Remember to replace /path/to/javafx-sdk/lib with the actual path on your computer.
-  
-      --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.charts
-
-
-Run:
-
-Run the main method in ExpenseTrackerFX.
-
-Option 2: Running from the Command Line
-
-Prerequisites:
-
-Ensure javac and java are in your system's PATH.
-
-Download the JavaFX SDK and note the path to its lib folder.
-
-Compile the Code:
-
-Open a terminal and navigate to the directory containing your com folder.
-
-Run the javac command, providing the module path and specifying the modules needed.
-
-# Make sure to replace /path/to/javafx-sdk/lib
-
-    javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.charts com/example/expensetrackerfx/ExpenseTrackerFX.java
-
-
-Run the Application:
-
-Run the java command, again providing the module path and the fully qualified class name.
-
-# Make sure to replace /path/to/javafx-sdk/lib
-
-    java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.charts com.example.expensetrackerfx.ExpenseTrackerFX
-
-
-Project Files
-
-    .
-    └── com/
-        └── example/
-            └── expensetrackerfx/
-                └── ExpenseTrackerFX.java    # The main application file
+This project is licensed under the MIT License.
+You are free to modify and distribute this project with proper attribution.
