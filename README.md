@@ -10,9 +10,14 @@ It offers a sleek, dark-themed interface with intuitive navigation, automatic da
 
 ## ✨ Preview
 
-| Dashboard | Add Expense | Expense Table | Settings |
-|------------|--![Uploading image.png…]()
-) | ![Add Expense](images/add-expense.png) | ![View Expenses](images/view-expenses.png) | ![Settings](images/settings.png) |
+| Dashboard | <img width="1918" height="996" alt="dashboard" src="https://github.com/user-attachments/assets/ea3b6a8a-f678-450b-bb07-9c2d8d54aa9a" />
+
+
+| Add Expense |  <img width="1918" height="948" alt="add-expense" src="https://github.com/user-attachments/assets/e98654b7-7280-48c2-9579-ee0c60e758b2" />
+
+| Expense Table | <img width="1643" height="908" alt="image" src="https://github.com/user-attachments/assets/53173139-f9f3-49cc-b56a-011f493eaf3f" />
+
+| Settings |  
 
 ---
 
